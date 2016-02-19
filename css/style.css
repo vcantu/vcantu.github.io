@@ -1,7 +1,7 @@
 html, body {
   background: #fafafa;
   /*color: #1BBBFB;*/
-  color: #f00;
+  color: #00f;
   font-family: sans-serif;
 }
 
@@ -10,7 +10,7 @@ html, body {
   src: url("RobotoTTF/Roboto-Light.ttf");
 }
 
-@media screen and (min-width: 1024px) {
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px)  {
 body {
   font-size: 100%;
   color: #00f
