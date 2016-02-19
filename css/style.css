@@ -1,18 +1,22 @@
 html, body {
-  background: #fafafa;
-  color: #1BBBFB;
+  background: #eeeeee;
+  color: #009688;
   font-family: sans-serif;
 }
 
 @font-face {
   font-family: robotoLight;
-  src: url("RobotoTTF/Roboto-Light.ttf");
+  src: url("RobotoTTF/Roboto-Thin.ttf");
+}
+
+@font-face {
+  font-family: roboto;
+  src: url("RobotoTTF/Roboto-Regular.ttf");
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px)  {
 body {
   font-size: 100%;
-  color: #00f;
   }
   .card {
     width: 90%
@@ -35,8 +39,13 @@ body {
   z-index: 10;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  background-color: #1BBBFB;
+  background-color: #009688;
   padding: 0 16px;
+  font-family: Roboto;
+
+  -webkit-box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.20);
+  -moz-box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.20);
+  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.20);
 }
 
 #actions {
@@ -70,6 +79,11 @@ body {
   fill: #fff;
 }
 
+#actions .iconDiv {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 #title {
   padding: 21px;
   position: absolute;
@@ -86,19 +100,23 @@ body {
 .card {
   display: block;
   position: relative;
-  width: 60%;
+  width: 70%;
   height: 100px;
-  border: 1px solid #1BBBFB;
-  -webkit-border-radius: 4px; 
-  -moz-border-radius: 4px;   
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: #fff;
-  margin: 16px auto;
+  margin: 24px auto;
   padding: 24px;
+  padding-bottom: 100px;
   font-family: robotoLight
+
+  -webkit-box-shadow: 0px 3px 10px 3px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 3px 10px 3px rgba(0,0,0,0.15);
+  box-shadow: 0px 3px 10px 3px rgba(0,0,0,0.15);
 }
 
 .header {
   font-size: 40px;
+  width: 70%;
   margin: 16px auto;
+  font-family: roboto;
 }
