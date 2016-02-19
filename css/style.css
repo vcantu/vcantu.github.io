@@ -1,12 +1,24 @@
 html, body {
   background: #fafafa;
-  color: #1BBBFB;
+  /*color: #1BBBFB;*/
+  color: #f00;
   font-family: sans-serif;
 }
 
 @font-face {
   font-family: robotoLight;
   src: url("RobotoTTF/Roboto-Light.ttf");
+}
+
+@media screen and (min-width: 1024px) {
+body {
+  font-size: 100%;
+  color: #00f
+  }
+  .card {
+    width: 90%
+  }
+}
 }
 
 #page {
