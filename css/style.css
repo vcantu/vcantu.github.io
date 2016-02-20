@@ -118,7 +118,7 @@ body {
   display: block;
   position: relative;
   width: 70%;
-  min-width: 600px;
+  /*min-width: 600px;*/
   max-width: 850px;
   height: 100px;
   border-radius: 6px;
