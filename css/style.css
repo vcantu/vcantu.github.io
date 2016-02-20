@@ -2,8 +2,6 @@ html, body {
   background: #eeeeee;
   color: #009688;
   font-family: sans-serif;
-
-  overflow-scrolling: touch;
 }
 
 @font-face {
@@ -92,8 +90,13 @@ body {
   pointer-events: none;
   position: relative;
   vertical-align: middle;
-  width: 24px;
-  height: 24px;
+  width: .02%;
+  min-width: 24px;
+
+  height: .02%;
+  min-height: 24px;
+/*  width: 24px;
+  height: 24px;*/
   fill: #fff;
 }
 
@@ -114,6 +117,8 @@ body {
   display: block;
   position: relative;
   width: 70%;
+  min-width: 600px;
+  max-width: 850px;
   height: 100px;
   border-radius: 6px;
   background-color: #fff;
@@ -130,6 +135,8 @@ body {
 .header {
   font-size: 40px;
   width: 70%;
+  min-width: 600px;
+  max-width: 850px;
   margin: 16px auto;
   font-family: roboto;
 }
