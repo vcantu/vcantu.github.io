@@ -2,7 +2,6 @@ html, body {
   background: #eeeeee;
   color: #009688;
   font-family: sans-serif;
-  overflow: scroll;
 }
 
 @font-face {
