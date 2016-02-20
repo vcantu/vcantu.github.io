@@ -116,15 +116,13 @@ body {
 .card {
   display: block;
   position: relative;
-  width: 70%;
-  /*min-width: 600px;*/
+  width: 80%;
   max-width: 850px;
-  height: 100px;
   border-radius: 6px;
   background-color: #fff;
   margin: 24px auto;
   padding: 24px;
-  padding-bottom: 100px;
+  /*padding-bottom: 100px;*/
   font-family: robotoLight
 
   -webkit-box-shadow: 0px 3px 10px 3px rgba(0,0,0,0.15);
@@ -134,9 +132,13 @@ body {
 
 .header {
   font-size: 40px;
-  width: 70%;
-  min-width: 600px;
+  width: 80%;
   max-width: 850px;
   margin: 16px auto;
   font-family: roboto;
+}
+
+li {
+  margin: 3px;
+  text-indent: 10px;
 }
