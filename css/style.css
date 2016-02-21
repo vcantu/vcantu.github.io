@@ -14,7 +14,7 @@ html, body {
   src: url("RobotoTTF/Roboto-Regular.ttf");
 }
 
-@media handheld, only screen and (min-device-width : 320px) and (max-device-width : 480px)  {
+/*@media handheld, only screen and (min-device-width : 320px) and (max-device-width : 480px)  {
 body {
   overflow: auto;
   font-size: 100%;
@@ -40,7 +40,7 @@ body {
     width: 90%
     min-width:90%;
   }
-}
+}*/
 
 #page {
   top: 0;
