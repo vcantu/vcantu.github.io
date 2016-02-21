@@ -17,6 +17,9 @@ html, body {
   src: url("RobotoTTF/Roboto-Regular.ttf");
 }
 
+#skrollr-body {
+
+}
 /*@media handheld, only screen and (min-device-width : 320px) and (max-device-width : 480px)  {
 body {
   overflow: auto;
