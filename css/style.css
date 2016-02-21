@@ -3,8 +3,7 @@ html, body {
   color: #009688;
   font-family: sans-serif;
 
-  overflow: scroll;
--webkit-overflow-scrolling: touch;
+  height: 100%;
 }
 
 @font-face {
