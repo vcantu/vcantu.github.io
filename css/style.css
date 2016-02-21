@@ -4,7 +4,7 @@ html, body {
   font-family: sans-serif;
 
   display: block;
-  position: absolute;
+  position: relative;
 }
 
 @font-face {
