@@ -4,11 +4,6 @@ $(document).ready(function () {
   });
 });
 
-if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
-skrollr.init({
-forceHeight: false
-});
-
 $("#slideshow > div:gt(0)").hide();
 
 setInterval(function() { 
