@@ -1,7 +1,12 @@
 $(document).ready(function () {
   skrollr.init({
-    smoothScrolling: false,
+    smoothScrolling: true,
   });
+});
+
+if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+skrollr.init({
+forceHeight: false
 });
 
 $("#slideshow > div:gt(0)").hide();
