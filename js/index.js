@@ -13,4 +13,4 @@ setInterval(function() {
     .fadeIn(1000)
     .end()
     .appendTo('#slideshow');
-},  5000);
+},  3000);
