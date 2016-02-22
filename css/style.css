@@ -198,8 +198,9 @@ li {
 }
 
 .circle-image {
-  width: 200px;
-  height: 200px;
+  width: 40%;
+  height: 0;
+  padding-bottom: 41%;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
