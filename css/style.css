@@ -25,7 +25,7 @@ html, body {
 }
 @media handheld, only screen and (min-device-width : 320px) and (max-device-width : 480px)  {
 .card {
-  width: 90%;
+  width: 100%;
 }
 }
 
@@ -176,10 +176,23 @@ li {
 }
 
 .githublink {
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+}
+
+.githublink-left {
+  margin-top: 0px;
+  margin-bottom: -10px;
+  display: block;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
 }
 
 .btn {
+  text-align: center;
   background-color: #009688;
   color: #fff;
   font-family: roboto;
