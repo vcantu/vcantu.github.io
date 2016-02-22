@@ -86,7 +86,7 @@
       <br><br>
       The keyboard consists of six areas, five outer ones and one inner. Each area is composed of one main, tappable, key and various other, swipeable, keys. Because every key is a unique gesture there it is much harder to make mistakes.
       <br><br>
-      Because it's compactability NovaKey includes many useful features that most generic QWERTY keyboards don't have. These include:
+      Because of it's compact design, NovaKey includes many useful features that most generic QWERTY keyboards don't have. These include:
       <li>Resizeable and movable</li>
       <li>The ability to move the cursor</li>
       <li>The ability to copy, cut, paste & select/deselect all text</li>
@@ -132,14 +132,14 @@
       <br><br>
       <center>
         <div class="vid-wrapper">
-          <video class="vid" autoplay loop muted>
+          <video id="vid1" class="vid" autoplay loop muted>
             <source src="images/rtw_other_ui.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
         </div>
         <br>
         <div class="vid-wrapper">
-          <video class="vid" autoplay loop muted>
+          <video id="vid2" class="vid" autoplay loop muted>
             <source src="images/rtw_picker.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
@@ -149,7 +149,7 @@
       Only part of this project is ongoing. Further development of the entire app has been halted. However, I am currently working on making the Place Picker more modular and publish it on Android Arsenal, so that other Android developers can add a customized version of it to their own apps. Below is the GitHub link to the current work in progress.
       <br>
       <center>
-        <a href="https://github.com/vcantu" target="_blank">
+        <a href="https://github.com/vcantu/Rate-the-Wait.git" target="_blank">
           <img class="githublink" src="images/GitHub.png">
         </a>
       </center>
@@ -168,7 +168,7 @@
         <li>Left click to fire</li>
         
       <br>
-      <a href="https://github.com/vcantu" target="_blank"
+      <a href="https://github.com/vcantu/Battleship.git" target="_blank"
       style="margin-left:15%;">
           <img class="githublink" src="images/GitHub.png">
       </a>
@@ -188,7 +188,7 @@
       <br><br>
       Below is a link to the GitHub repository with the code to this project.
       <br>
-      <center><a href="https://github.com/vcantu" target="_blank">
+      <center><a href="https://github.com/vcantu/Simple-Calc.git" target="_blank">
           <img class="githublink" src="images/GitHub.png">
       </a></center>
     </div>
@@ -200,7 +200,7 @@
       <br><br>
       Below is a link to the GitHub repository with the code to this project.
       <br>
-      <center><a href="https://github.com/vcantu" target="_blank">
+      <center><a href="https://github.com/vcantu/NumToWord.git" target="_blank">
           <img class="githublink" src="images/GitHub.png">
       </a></center>
     </div>
@@ -212,7 +212,7 @@
       <br><br>
       Below is a link to the GitHub repository with the code to this project. 
       <br>
-      <center><a href="https://github.com/vcantu/vcantu.github.io" target="_blank">
+      <center><a href="https://github.com/vcantu/vcantu.github.io.git" target="_blank">
           <img class="githublink" src="images/GitHub.png">
       </a></center>
     </div>
@@ -223,6 +223,15 @@
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.11/skrollr.min.js'></script>
 <script src="js/index.js"></script>
+<script>
+document.getElementById('vid1').onclick = function (){
+    document.getElementById('vid1').play();
+};
+
+document.getElementById('vid2').onclick = function (){
+    document.getElementById('vid2').play();
+};
+</script>
   </body>
 
 </html>
