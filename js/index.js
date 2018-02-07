@@ -15,6 +15,7 @@ setInterval(function() {
     .appendTo('#slideshow');
 },  4000);
 
+
 $("#ryzeup-show > div:gt(0)").hide();
 
 setInterval(function() { 
