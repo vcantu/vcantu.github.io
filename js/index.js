@@ -16,13 +16,13 @@ setInterval(function() {
 },  4000);
 
 
-$("#ryzeup-show > div:gt(0)").hide();
+$("#ryzeupshow > div:gt(0)").hide();
 
 setInterval(function() { 
-  $('#ryzeup-show > div:first')
+  $('#ryzeupshow > div:first')
     .fadeOut(1000)
     .next()
     .fadeIn(1000)
     .end()
-    .appendTo('#ryzeup-show');
+    .appendTo('#ryzeupshow');
 },  5000);

@@ -145,7 +145,7 @@ li {
   bottom: 0px;
 }
 
-#ryzeup-show {
+#ryzeupshow {
   overflow: hidden;
   margin: 10px auto; 
   position: relative; 
@@ -159,7 +159,7 @@ li {
   border-radius: 6px;
 }
 
-#ryzeup-show > div {
+#ryzeupshow > div {
   position: absolute; 
   top: 0px; 
   left: 0px; 
