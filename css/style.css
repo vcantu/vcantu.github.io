@@ -137,6 +137,15 @@ li {
   border-radius: 6px;
 }
 
+#ryzeup-show {
+  overflow: hidden;
+  margin: 10px auto; 
+  position: relative; 
+  width: 600px;
+  max-width: 90%;
+  height: 400px;
+}
+
 #slideshow > div {
   position: absolute; 
   top: 0px; 
