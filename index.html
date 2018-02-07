@@ -26,14 +26,12 @@
       </div> -->
       <div class="spacer"></div>
 
-      <a href:"www.google.com">
       <!-- github -->
       <div class="icon" onclick="window.open('https://github.com/vcantu', '_blank');">
         <svg style="width:24px;height:24px" viewBox="0 0 24 24" x="0px" y="0px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
         </svg>
       </div>
-      </a>
 
       <!-- linked in -->
       <div class="icon" onclick="window.open('https://www.linkedin.com/in/viviano-cantu-jr-00113a113', '_blank');">
@@ -55,6 +53,14 @@
           <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
       </svg>
       </div>
+      
+      <!-- mail -->
+      <div class="icon" onclick="window.open('CV.pdf', '_blank');">
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="#FFF" d="M14,17H7V15H14M17,13H7V11H17M17,9H7V7H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z" />
+        </svg>
+      </div>
+      
 
     </div>
     <div id="title" data-0="font-size: 48px; padding: 0 0 24px 12px;" data-128="font-size: 18px; padding: 0 0 21px 60px;">
@@ -73,7 +79,7 @@
       </center>
       <br><br>
       Hi! Welcome to my site!
-      <br>My name is Viviano and I am a third year student at <b>Northeastern University</b> majoring in Computer Science and Finance. I love developing software, especially for Android and iOS.
+      <br>My name is Viviano and I am a fourth year student at <b>Northeastern University</b> majoring in Computer Science and Finance. I love developing software, especially for Android and iOS.
       <br><br>
       I've been coding since I was a freshman in high school. This page includes some of the projects I have worked on since I started.
       <br>
@@ -135,6 +141,37 @@
         <img style="width:200px" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" />
       </a></center>
     </div>
+    
+    <div class="card">
+      <big>Raspberry PI Smart Mirror</big>
+      <br><br>
+      This began this project during the sumer of 2016. Since I had a small broken TV and a Raspberry PI lying around, I decided to combine them together into something useful. First I got a picture frame and some <a href="https://www.tapplastics.com/product/plastics/cut_to_size_plastic/two_way_mirrored_acrylic/558" target="_blank">two-way mirror plastic</a> from tapplastics.com. Two-way mirror acrylic acts as a mirror if the opposite side is not lit, but it is see-through if there is light behind it. This was useful because if you display black and white elements on a screen with two-way mirror in front of it, the black elements will be reflective and the white elements will show through.
+      <br><br>
+      I then created a simple program that displays useful information including:
+      <li>Weather - from OpenWeather.org</li>
+      <li>News Headlines - from RSS feeds</li>
+      <li>Calendar Events - from the Google Calendar API</li>
+      <li>Phone Notifications - from the Pushbullet API</li>
+      <br><br>
+      <center>
+        <video id="vid1" class="vid" autoplay loop muted>
+          <source src="images/smartmirror_video.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+        <br><br>
+      </center>
+      <center><i>video courtesy of my brother</i></center>
+      <br><br>
+      In the future I plan to upgrade both the hardware and the software of my contraption. If I upgrade the screen from an old LCD to an AMOLED panel the mirror will look much better since AMOLED screens are not backlit. I also plan on integrating Spotify's API to display music currently playing and adding the ability to control it via smartphone app.
+      <br>
+      <center>
+        <a href="https://github.com/vcantu/SmartMirror.git" target="_blank">
+          <img class="githublink" src="images/GitHub.png">
+        </a>
+      </center>
+    </div>
+    
+    
     <div class="card">
       <big>Place Picker/Finder</big>
       <br><br>
@@ -183,23 +220,10 @@
         <li>Right click ships to rotate them</li>
         <li>Left click to fire</li>
 
-      <div style="width: 100%; display: table;">
-        <div style="display: table-row;">
-          <a href="https://github.com/vcantu/Battleship.git" target="_blank"
-          style="display: table-cell; width: 50%;">
-          <center>
-              <img class="githublink-left" src="images/GitHub.png">
-              </center>
-          </a>
-          <a href="https://drive.google.com/uc?export=download&id=0B0s0-BXNYlNOWE9YZUJSa012OHc" download target="_blank" style="display: table-cell; width: 50%;">
-            <div class="btn" style="max-width: 70%;">
-              CLICK TO PLAY!
-            </div>
-          </a>
-
-        </div>
-      </div>
-
+      <br>
+      <center><a href="https://github.com/vcantu/NumToWord.git" target="_blank">
+          <img class="githublink" src="images/GitHub.png">
+      </a></center>
     </div>
 
     <div class="card">
@@ -253,7 +277,7 @@
     <div class="card">
       <big>This Site!</big>
       <br><br>
-      I made this website ussing HTML, CSS, and a bit of JavaScript.
+      I made this website from scratch using HTML, CSS and JavaScript.
       <br><br>
       Below is a link to the GitHub repository with the code to this project.
       <br>
