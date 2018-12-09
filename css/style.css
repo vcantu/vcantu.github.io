@@ -145,6 +145,28 @@ li {
   bottom: 0px;
 }
 
+#ryzeupshow {
+  overflow: hidden;
+  margin: 10px auto; 
+  position: relative; 
+  width: 600px;
+  max-width: 90%;
+  height: 400px;
+  
+  -webkit-box-shadow: 0px 3px 10px 3px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 3px 10px 3px rgba(0,0,0,0.15);
+  box-shadow: 0px 3px 10px 3px rgba(0,0,0,0.15);
+  border-radius: 6px;
+}
+
+#ryzeupshow > div {
+  position: absolute; 
+  top: 0px; 
+  left: 0px; 
+  right: 0px; 
+  bottom: 0px;
+}
+
 .slideshow-img {
   width: 100%;
   height: auto;
