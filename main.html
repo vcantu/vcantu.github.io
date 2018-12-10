@@ -15,10 +15,9 @@
     <!--<div class="background-triangle"></div>-->
 
     <div class="header">
-        <div class="yellow rect"
-             style="width: {{ctrl.growHeader ? '40rem' : '20rem'}};
-                    padding-right: {{ctrl.growHeader ? '2.5rem' : '1.5rem'}}">
-            <h1 style="font-size: {{ctrl.growHeader ? '4rem' : '2.5rem'}}">Viviano Cantú</h1>
+        <div class="yellow rect slant1"
+             data-ng-class="ctrl.growHeader ? '' : 'shrink'">
+            <h1>Viviano Cantú</h1>
         </div>
     </div>
 
@@ -32,11 +31,13 @@
                 I've been coding since I was a freshman in high school. This page includes some of the projects I have worked on since I started.
             </p>
             <!--<span class="mdi mdi-file"></span>-->
+            <input type="text"/>
+            <button>submit</button>
         </div>
 
         <div class="section">
             <h2 style="margin-bottom: 2rem">Experience:</h2>
-            <h5 class="orange" style="color: #33455C">Amazon Robotics - Solutions Engineer</h5>
+            <h4 class="badge orange text-color">Amazon Robotics</h4> Solutions Engineer
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
         </div>
 
@@ -44,28 +45,28 @@
             <h2>Projects:</h2>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-6">
-                    <div class="maroon card">
+                    <div class="maroon card slant2">
                         <h3>NovaKey</h3>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6">
-                    <div class="blue card">
+                    <div class="blue card slant1">
                         <h3>Ryze Up</h3>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4">
-                    <div class="yellow card">
+                    <div class="yellow card slant2">
                         <h3>Place Picker</h3>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4">
-                    <div class="pink card">
+                    <div class="pink card slant3">
                         <h3>Rate the Wait</h3>
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-4">
-                    <div class="purple card">
+                    <div class="purple card slant1">
                         <h3>Battleship</h3>
                     </div>
                 </div>

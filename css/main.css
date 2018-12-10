@@ -34,6 +34,9 @@
     background: #edeaea;
     color: #33455C;
 }
+.text-color {
+    color: #33455C;
+}
 
 body {
     margin: 0;
@@ -59,25 +62,28 @@ body {
     z-index: 3;
     opacity: 1;
 }
+.header .rect {
+    width: 600pt;
+    transition: width .5s;
+    max-width: 80%;
+    text-align: right;
+    padding: 1rem 4rem 1.5rem 2rem;
+    clip-path: polygon(0 0, 96% 2%, 100% 92%, 0 100%)
+}
+.header .rect.shrink {
+    width: 350pt;
+    /*padding-right: 2.5rem;*/
+}
 .header h1 {
     font-weight: 100;
-    font-size: 3rem;
+    font-size: 60pt;
     margin: 0;
     transition: font-size .5s;
     text-align: right;
     color: #33455C;
 }
-.header .rect {
-    width: 25rem;
-    transition: width .5s;
-    max-width: 80%;
-    text-align: right;
-
-    padding: 1rem 1.5rem 1.5rem 2rem;
-    /*border-radius: 0 1rem 1rem 0;*/
-    -webkit-box-shadow: 6px 10px 50px -20px #33455C;
-    -moz-box-shadow: 6px 10px 50px -20px #33455C;
-    box-shadow: 6px 10px 50px -20px #33455C;
+.header .rect.shrink  h1{
+    font-size: 40pt;
 }
 
 /**
@@ -88,49 +94,36 @@ body {
     margin: 8rem auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    font-size: 2rem;
+    font-size: 20pt;
     color: #33455C;
-}
-.main-container p {
-    font-size: 1.5rem;
 }
 .main-container h2 {
     margin-bottom: 1rem;
-    font-size: 2rem;
 }
 .main-container .section {
     margin-bottom: 5rem;
     position: relative;
 }
-.main-container .section h5 {
+.badge {
     display: inline;
     padding: 0 .5rem;
 }
-.main-container .card {
-    padding: 2rem;
-    margin: 1rem .5rem;
-    height: 15rem;
-    /*border-radius: 0 2rem;*/
 
-    /*-webkit-box-shadow: 10px 10px 47px -19px #33455C;*/
-    /*-moz-box-shadow: 10px 10px 47px -19px #33455C;*/
-    /*box-shadow: 10px 10px 47px -19px #33455C;*/
-}
-
+/**
+    Input
+ */
 input[type=text] {
-    font-size: 1.5rem;
     font-family: 'Roboto Mono', monospace;
-    color: #5A78A1;
+    color: #33455C;
     border: none;
     background: #ffffff00;
     border-bottom: .1rem solid #33455C;
+    font-size: 1em;
 }
-
 input[type=text]:focus {
     outline: none;
     border-bottom: .11rem solid #5A78A1;
 }
-
 .input {
     display: flex;
     width: 60%;
@@ -145,18 +138,43 @@ input[type=text]:focus {
     flex: .6;
 }
 
+/**
+    Button
+ */
 button {
-    font-size: 1.5rem;
+    font-size: 1em;
     font-family: 'Roboto Mono', monospace;
     border: none;
     background: #FFBC67;
     color: #33455C;
-    padding: .4rem 2rem;
+    padding: .5rem 2rem;
     margin: .5rem;
-    -webkit-box-shadow: 6px 10px 50px -20px #33455C;
-    -moz-box-shadow: 6px 10px 50px -20px #33455C;
-    box-shadow: 6px 10px 50px -20px #33455C;
+    cursor: pointer;
+    clip-path: polygon(4% 0%, 100% 6%, 96% 98%, 0% 100%);
+    position:relative;
+}
+button:focus {
+    outline: none;
 }
 button:hover {
     background: #F5B463;
+}
+
+.card {
+    padding: 5%;
+    margin: 1rem .5rem;
+    height: 15rem;
+}
+/**
+    Slant
+*/
+.slant1 {
+    clip-path: polygon(0 0, 94% 0, 98% 96%, 2% 100%);
+}
+.slant2 {
+    clip-path: polygon(4% 0%, 98% 6%, 96% 98%, 0% 100%);
+    padding-left: 10% !important;
+}
+.slant3 {
+    clip-path: polygon(0 2%, 90% 2%, 94% 96%, 0 98%);
 }
