@@ -143,7 +143,7 @@
                ng-change="ctrl.stop()"></md-slider>
 </div>
 <div class="container">
-    <button ng-click="(ctrl.paused && ctrl.play()) || ctrl.stop()">{{ctrl.paused ? 'Play' : 'Stop'}}</button>
+    <md-button ng-click="(ctrl.paused && ctrl.play()) || ctrl.stop()">{{ctrl.paused ? 'Play' : 'Stop'}}</md-button>
     Trail:
     <input type="number" style="width: 20pt" ng-model="ctrl.trail"/>
 </div>
