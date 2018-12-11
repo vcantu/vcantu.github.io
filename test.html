@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="test">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-messages.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.10/angular-material.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.10/angular-material.min.css"/>
+    <title>Test</title>
+</head>
+<script>
+    angular.module('test', ['ngMaterial'])
+        .controller('MainController', ['$interval', function($interval) {
+            let ctrl = this;
+            ctrl.random = function(min, max) {
+                return Math.random() * (+max - +min) + +min;
+            };
+
+            ctrl.trail = 0;
+            ctrl.paused = true;
+            ctrl.width = 20000;
+            ctrl.height = 10000;
+            ctrl.areas = [];
+            for (let i=0; i<100; i++) {
+                let t = ctrl.random(-10, 110);
+                ctrl.areas.push({
+                    x: ctrl.random(0, ctrl.width - ctrl.width/8),
+                    y: ctrl.random(0, ctrl.height - ctrl.width/8),
+                    width: ctrl.random(4, ctrl.width/8),
+                    height: ctrl.random(4, ctrl.height/8),
+                    startTime: t,
+                    endTime: t + ctrl.random(1, 10)
+                })
+            }
+            ctrl.obstructions = [];
+            for (let i=0; i<50; i++) {
+                let t = ctrl.random(-10, 110);
+                ctrl.obstructions.push({
+                    x: ctrl.random(0, ctrl.width - ctrl.width/8),
+                    y: ctrl.random(0, ctrl.height - ctrl.width/8),
+                    radius: ctrl.random(4, ctrl.width/32),
+                    startTime: t,
+                    endTime: t + ctrl.random(1, 10)
+                })
+            }
+            ctrl.score = [];
+            for (let i=0; i<=100; i++) {
+                ctrl.score.push({
+                    y: ctrl.random(0, 8),
+                    t: i
+                })
+            }
+            ctrl.generateScorePath = function() {
+                let res = "M";
+                for (let i=0; i<ctrl.score.length; i++) {
+                    res += ctrl.score[i].t + ' ' + ctrl.score[i].y;
+                    if (i < ctrl.score.length-1) {
+                        res += ' L'
+                    }
+                }
+                return res;
+            };
+
+            ctrl.currTime = 0;
+            ctrl.stop = function() {
+                $interval.cancel(ctrl.timer);
+                ctrl.paused = true;
+                return true;
+            };
+            ctrl.play = function() {
+                ctrl.paused = false;
+                ctrl.timer = $interval(function() {
+                    ctrl.currTime++;
+                    if (ctrl.currTime >= 100) {
+                        ctrl.currTime = 0;
+                    }
+                }, 100);
+                return true;
+            };
+
+            ctrl.getAreas = function() {
+                return this.areas.filter(function(a) {
+                    return ctrl.currTime > (a.startTime - ctrl.trail) && ctrl.currTime < a.endTime;
+                });
+            };
+            ctrl.getObstructions = function() {
+                return this.obstructions.filter(function(a) {
+                    return ctrl.currTime > (a.startTime - ctrl.trail) && ctrl.currTime < a.endTime;
+                });
+            };
+
+            ctrl.calculateOpacity = function (a) {
+                let diff = a.startTime - ctrl.currTime;
+                if (diff <= 0)
+                    return 1;
+                return diff/ctrl.trail;
+            };
+        }]);
+</script>
+<style>
+    body {
+        padding: 10pt;
+    }
+    .container {
+        width: 200px;
+    }
+    .map {
+        width: 200px;
+        height: 100px;
+        background: #fff;
+    }
+</style>
+<body ng-controller="MainController as ctrl" style="background: #eeeeee;">
+
+<div class="map">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+         width="100%" height="100%" viewBox="0 0 {{ctrl.width}} {{ctrl.height}}">
+        <rect ng-attr-x="{{a.x}}" ng-attr-y="{{a.y}}" ng-attr-width="{{a.width}}" ng-attr-height="{{a.height}}" fill="#3671A1" style="fill-opacity: {{ctrl.calculateOpacity(a)}}"
+              ng-repeat="a in ctrl.getAreas()"></rect>
+        <circle ng-attr-cx="{{a.x}}" ng-attr-cy="{{a.y}}" ng-attr-r="{{a.radius}}" fill="#F67274" style="fill-opacity: {{ctrl.calculateOpacity(a)}}"
+              ng-repeat="a in ctrl.getObstructions()"></circle>
+
+    </svg>
+</div>
+<div class="map" style="height: 20px; margin-top: 4px">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+         width="200" height="20" viewBox="0 -1 100 10">
+        <path ng-attr-d="{{ctrl.generateScorePath()}}" fill="none" stroke="#F67274" stroke-width=".02em" stroke-linejoin="round"></path>
+        <path d="M0 2 L100 2" fill="none" stroke="#3671A1" stroke-width=".01em" stroke-dasharray="2,1"></path>
+
+        <!--time line-->
+        <path d="M{{ctrl.currTime}} -1 L{{ctrl.currTime}} 10" fill="none" stroke="red" stroke-width=".02em"></path>
+        <circle ng-attr-cx="{{ctrl.currTime}}" ng-attr-cy="{{ctrl.score[ctrl.currTime].y}}" ng-attr-r=".75" fill="red"></circle>
+    </svg>
+</div>
+<div class="container">
+    <md-slider min="0" max="100" ng-model="ctrl.currTime" aria-label="red"
+               class="md-warn"
+               ng-change="ctrl.stop()"></md-slider>
+</div>
+<div class="container">
+    <button ng-click="(ctrl.paused && ctrl.play()) || ctrl.stop()">{{ctrl.paused ? 'Play' : 'Stop'}}</button>
+    Trail:
+    <input type="number" style="width: 20pt" ng-model="ctrl.trail"/>
+</div>
+
+</body>
+</html>
