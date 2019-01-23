@@ -37,6 +37,9 @@
 .text-color {
     color: #33455C;
 }
+.light-text-color {
+    color: #f5f0f0;
+}
 
 body {
     margin: 0;
@@ -61,6 +64,7 @@ body {
     top: 1rem;
     z-index: 3;
     opacity: 1;
+    filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.2))
 }
 .header .rect {
     width: 600pt;
@@ -68,11 +72,11 @@ body {
     max-width: 80%;
     text-align: right;
     padding: 1rem 4rem 1.5rem 2rem;
-    clip-path: polygon(0 0, 96% 2%, 100% 92%, 0 100%)
+    clip-path: polygon(0 0, 96% 2%, 100% 92%, 0 100%);
 }
 .header .rect.shrink {
     width: 350pt;
-    /*padding-right: 2.5rem;*/
+    font-size: .5em;
 }
 .header h1 {
     font-weight: 100;
@@ -86,6 +90,10 @@ body {
     font-size: 40pt;
 }
 
+a {
+    color: #5A78A1;
+}
+
 /**
     Main Containers
  */
@@ -94,7 +102,7 @@ body {
     margin: 8rem auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    font-size: 20pt;
+    font-size: 16pt;
     color: #33455C;
 }
 .main-container h2 {
@@ -104,10 +112,34 @@ body {
     margin-bottom: 5rem;
     position: relative;
 }
+
+.sub-section-header {
+    padding: .5rem
+}
 .badge {
     display: inline;
     padding: 0 .5rem;
+    transition: padding .2s;
 }
+.badge:hover {
+    padding: .2rem .7rem;
+}
+
+.no-underline {
+    text-decoration: none !important;
+}
+.main-container .expand-container {
+    margin-left: 1.5rem;
+    font-size: .85em;
+}
+.highlight-hover {
+    cursor: pointer;
+    transition: background .3s;
+}
+.highlight-hover:hover {
+    background: #33455C10;
+}
+
 
 /**
     Input
@@ -164,6 +196,13 @@ button:hover {
     padding: 5%;
     margin: 1rem .5rem;
     height: 15rem;
+    transition: transform .2s ease-out;
+}
+.card:hover {
+    transform: rotate(2deg);
+}
+.card.counter-clockwise:hover {
+    transform: rotate(-2deg);
 }
 /**
     Slant

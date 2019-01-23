@@ -5,6 +5,7 @@
     <title>Viviano Cantu</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Fontdiner+Swanky" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/3.2.89/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
@@ -26,19 +27,43 @@
         <div class="section">
             <h2>Welcome to my site!</h2>
             <p>
-                I'm Viviano and I am a senior at <b>Northeastern University</b> majoring in Computer Science and Finance. I love developing software, especially for Android and iOS.
+                I'm Viviano and I am a senior at <b>Northeastern University</b> majoring in Computer Science and Marketing.
+                I'll be working for Amazon Robotics after I graduate in 2019.
                 <br>
+                I love developing software, especially mobile apps and websites.
                 I've been coding since I was a freshman in high school. This page includes some of the projects I have worked on since I started.
             </p>
-            <!--<span class="mdi mdi-file"></span>-->
-            <input type="text"/>
-            <button>submit</button>
+            <!--<span class="mdi mdi-github-circle"></span>-->
+            <!--<input type="text"/>-->
+            <!--<button>submit</button>-->
         </div>
 
         <div class="section">
             <h2 style="margin-bottom: 2rem">Experience:</h2>
-            <h4 class="badge orange text-color">Amazon Robotics</h4> Solutions Engineer
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+            <div class="sub-section"
+                 ng-repeat="(org, exp) in ctrl.experience">
+
+                <div class="sub-section-header highlight-hover"
+                     ng-click="exp._collapsed = !exp._collapsed">
+                    <a href="{{exp.link}}" target="_blank" class="no-underline">
+                        <b class="badge {{exp.color}} {{exp.lightText ? 'light-text-color' : 'text-color'}}"
+                        >{{exp.org}}</b></a> {{exp.title}}{{exp._collapsed ? '...' : ''}}
+                </div>
+
+                <div  ng-if="!exp._collapsed" class="expand-container">
+                    <p ng-if="exp.from"><b><u>FROM</u></b> <span ng-bind-html="exp.from | markdown"></span>
+                        <b><u>TO</u></b> <span ng-bind-html="exp.to | markdown"></span></p>
+                    <p ng-if="exp.they"><b><u>THEY</u></b> <span ng-bind-html="exp.they | markdown"></span></p>
+                    <p ng-if="exp.i"><b><u>I</u></b> <span ng-bind-html="exp.i | markdown"></span></p>
+                    <p ng-if="exp.used"><b><u>USED</u></b> <span ng-repeat="u in exp.used"><span ng-bind-html="u | markdown"></span> </span></p>
+                </div>
+                <!--<div class="expand-collapse highlight-hover"-->
+                     <!--ng-if="!exp._collapsed"-->
+                     <!--ng-click="exp._collapsed = !exp._collapsed">-->
+                    <!--<i class="mdi mdi-chevron-up" style="font-size: 1.5em;"></i>-->
+                <!--</div>-->
+            </div>
+
         </div>
 
         <div class="section">
@@ -50,7 +75,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6">
-                    <div class="blue card slant1">
+                    <div class="blue card slant1 counter-clockwise">
                         <h3>Ryze Up</h3>
                     </div>
                 </div>
@@ -60,7 +85,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-4">
-                    <div class="pink card slant3">
+                    <div class="pink card slant3 counter-clockwise c">
                         <h3>Rate the Wait</h3>
                     </div>
                 </div>
