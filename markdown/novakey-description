@@ -1,0 +1,10 @@
+This is my pride and joy. I have been working on this app since September of 2014. I always found the idea of QWERTY keyboards on touchscreens backwards. Since I had some Java experience I decided to jump in and try it for myself. 
+
+The keyboard consists of six areas, five outer ones and one inner. Each area is composed of one main, tappable, key and various other, swipeable, keys. Because every key is a unique gesture there it is much harder to make mistakes. 
+
+Because of it's compact design, NovaKey includes many useful features that most generic QWERTY keyboards don't have. These include:
+* Resizeable and movable
+* The ability to move the cursor
+* The ability to copy, cut, paste & select/deselect all text
+* All the special keys you may need
+* Customizable with many colors and themes

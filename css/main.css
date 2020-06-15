@@ -40,96 +40,104 @@
 .light-text-color {
     color: #f5f0f0;
 }
-
 body {
     margin: 0;
+    font-size: 16pt;
     font-family: 'Roboto Mono', monospace;
     position: relative;
-    padding-top: 8rem;
-}
-
-.triangle {
-    width: 100%;
-    height: 60rem;
-    top: 0;
-    position: absolute;
-    z-index: -1;
+    /*padding-top: 8em;*/
 }
 
 /**
     Header
  */
 .header {
-    position: sticky;
-    top: 1rem;
+    position: fixed;
+    top: 1em;
     z-index: 3;
     opacity: 1;
+    /*margin-top: 2rem;*/
     filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.2))
 }
 .header .rect {
-    width: 600pt;
+    width: 20em;
+    overflow: hidden;
+    white-space: nowrap;
+
     transition: width .5s;
     max-width: 80%;
     text-align: right;
-    padding: 1rem 4rem 1.5rem 2rem;
-    clip-path: polygon(0 0, 96% 2%, 100% 92%, 0 100%);
+    padding: .5em 1em 1em 2em;
 }
 .header .rect.shrink {
-    width: 350pt;
-    font-size: .5em;
+    width: 16em;
+    font-size: .8em;
 }
 .header h1 {
-    font-weight: 100;
-    font-size: 60pt;
     margin: 0;
     transition: font-size .5s;
     text-align: right;
     color: #33455C;
 }
-.header .rect.shrink  h1{
-    font-size: 40pt;
-}
 
+/**
+    Links
+ */
 a {
     color: #5A78A1;
 }
-
-/**
-    Main Containers
- */
-.main-container {
-    max-width: 60rem;
-    margin: 8rem auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    font-size: 16pt;
-    color: #33455C;
+a.mdi {
+    text-decoration: none;
 }
-.main-container h2 {
-    margin-bottom: 1rem;
-}
-.main-container .section {
-    margin-bottom: 5rem;
-    position: relative;
-}
-
-.sub-section-header {
-    padding: .5rem
-}
-.badge {
-    display: inline;
-    padding: 0 .5rem;
-    transition: padding .2s;
-}
-.badge:hover {
-    padding: .2rem .7rem;
-}
-
 .no-underline {
     text-decoration: none !important;
 }
+/**
+    Badge
+ */
+.badge {
+    display: inline;
+    padding: 0 .5em;
+    transition: padding .2s;
+}
+.badge:hover {
+    padding: .2em .7em;
+}
+
+
+/**
+    Containers
+ */
+.page-container {
+    position: fixed;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+}
+.page {
+    position: absolute;
+    width: 100%;
+    transition: left .5s;
+}
+.main-container {
+    max-width: 40em;
+    margin: 8em auto;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    color: #33455C;
+}
+.main-container h2 {
+    margin-bottom: 1em;
+}
+.main-container .section {
+    margin-bottom: 2em;
+    position: relative;
+}
+.sub-section-header {
+    padding: .5em
+}
 .main-container .expand-container {
-    margin-left: 1.5rem;
+    margin-left: 1.5em;
     font-size: .85em;
 }
 .highlight-hover {
@@ -139,7 +147,13 @@ a {
 .highlight-hover:hover {
     background: #33455C10;
 }
-
+.icon-link {
+    font-size: 1.5em;
+    padding: 0 .5em;
+}
+.icon-link-container {
+    text-align: center;
+}
 
 /**
     Input
@@ -149,12 +163,12 @@ input[type=text] {
     color: #33455C;
     border: none;
     background: #ffffff00;
-    border-bottom: .1rem solid #33455C;
+    border-bottom: .1em solid #33455C;
     font-size: 1em;
 }
 input[type=text]:focus {
     outline: none;
-    border-bottom: .11rem solid #5A78A1;
+    border-bottom: .11em solid #5A78A1;
 }
 .input {
     display: flex;
@@ -164,7 +178,7 @@ input[type=text]:focus {
 .input>span {
     flex: .4;
     text-align: right;
-    margin: .25rem 1rem 0;
+    margin: .25em 1em 0;
 }
 .input>input {
     flex: .6;
@@ -179,10 +193,9 @@ button {
     border: none;
     background: #FFBC67;
     color: #33455C;
-    padding: .5rem 2rem;
-    margin: .5rem;
+    padding: .5em 2em;
+    margin: .5em;
     cursor: pointer;
-    clip-path: polygon(4% 0%, 100% 6%, 96% 98%, 0% 100%);
     position:relative;
 }
 button:focus {
@@ -191,29 +204,70 @@ button:focus {
 button:hover {
     background: #F5B463;
 }
-
-.card {
-    padding: 5%;
-    margin: 1rem .5rem;
-    height: 15rem;
-    transition: transform .2s ease-out;
-}
-.card:hover {
-    transform: rotate(2deg);
-}
-.card.counter-clockwise:hover {
-    transform: rotate(-2deg);
-}
 /**
-    Slant
-*/
-.slant1 {
-    clip-path: polygon(0 0, 94% 0, 98% 96%, 2% 100%);
+    Popup
+ */
+.popup-background {
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #33455C;
+    background-color: #33455C40;
 }
-.slant2 {
-    clip-path: polygon(4% 0%, 98% 6%, 96% 98%, 0% 100%);
-    padding-left: 10% !important;
+.popup {
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    width: 80%; /* Could be more or less, depending on screen size */
 }
-.slant3 {
-    clip-path: polygon(0 2%, 90% 2%, 94% 96%, 0 98%);
+
+/**
+    Popup
+ */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 5em;
+    background-color: #222f3f;
+    color: #edeaea;
+    text-align: center;
+    font-size: .5em;
+    padding: .2em .5em;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -3em;
+    transform: scale(0);
+    transition: transform 100ms ease;
+}
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border: 5px solid transparent;
+    border-bottom-color: #222f3f;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    transform: scale(1);
+}
+
+/**
+    Popup
+ */
+.sub-section .icon-container {
+   text-align: center;
+}
+.icon-container .icon {
+    height: 6rem;
 }

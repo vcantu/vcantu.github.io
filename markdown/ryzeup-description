@@ -1,0 +1,6 @@
+This project is intended to show the connections and networks in the political system of the US, it displays information in a easy to see, interactive, and fluid way. Allows for users to go through and see their representatives, look at bills, read user explanations and comments, and see what their representative is actually a part of.
+The hope of this project is to simplify the intricacies of our complex government system, by being a platform for information and discussion about the US government.
+
+The website is uses ExpressJS for the backend, MongoDB for data storage and AngularJS for fronend rendering.
+This project was developed with some assistance from my friend Nicholas Westin.
+      
